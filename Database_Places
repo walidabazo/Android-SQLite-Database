@@ -1,0 +1,63 @@
+public class Database_Places {
+  int _ID;
+	String  _name;
+	String _phone;
+  String  _Address;
+  String  _longitude;
+	String  _Latitude;
+  }
+  
+      
+public Database_Places(){
+		
+	}
+  
+  public Database_Places( int ID,String name,String phone,String Address,String longitude, String Latitude)
+  {
+  this._name =  name;
+   this._Adress = phone ;
+  this._Adress = Adress ;
+	this._longitude = longitude ;
+	this._Latitude =  Latitude;
+  }
+  
+  public Database_Places(String name,String phone,String Address,String longitude, String Latitude)
+  
+  {
+  this._name =  name;
+  this._Adress = phone ;
+  this._Adress = Adress ;
+	this._longitude = longitude ;
+	this._Latitude =  Latitude;
+  }
+  //get
+  
+  public int getID(){
+  return this._ID;
+  }
+  
+  public String getname(){	
+  return this._name;
+ 
+  }
+  public String getphone(){	
+  return this._phone;
+ 
+  }
+  
+ public String getAdress(){	
+ return this._Adress;
+ }
+public String getlongitude(){	
+return this._longitude;
+}
+public String getLatitude(){
+return this._Latitude;
+}
+  //set
+  public void setID(int ID){	this._ID = ID ;  }
+  public void setname(String name ){	this._name = name;  }
+  public void setname(String phone ){	this._name = phone;  }
+  public void setAdress(String Adress){	this._Adress = Adress ;  }
+  public void setlongitude(String longitude){	this._longitude = longitude ;  }
+  public void setLatitude(String Latitude){	this._Latitude = Latitude ;  }
