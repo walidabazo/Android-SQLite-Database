@@ -1,6 +1,7 @@
 # Android-SQLite-Database
-#sqlite in android using eclipse
-##Following is the modified content of display Places activity 
+# sqlite in android using eclipse
+
+## Following is the modified content of display Places activity 
 
     public class Database_Places 
     {
