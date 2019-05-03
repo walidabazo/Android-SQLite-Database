@@ -28,7 +28,7 @@ public class DatabaseHandler_Places  extends SQLiteOpenHelper {
 		String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_Places + "("
 				+ KEY_ID + " INTEGER PRIMARY KEY," 	+KEY_name + " NVARCHAR(255), "
         +KEY_phone + " NVARCHAR(255), " 
-        	+KEY_Adress + " NVARCHAR(255), " 
+        	+KEY_Address + " NVARCHAR(255), " 
 						+KEY_longitude + " NVARCHAR(255), " 
 						+KEY_Latitude + " NVARCHAR(255),+ ")";
 		db.execSQL(CREATE_CONTACTS_TABLE);
