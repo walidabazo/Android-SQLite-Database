@@ -240,37 +240,28 @@
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.databasinsert_places);
 	     
-	
-		    DatabaseHandler_Places db = new DatabaseHandler_Places(this);  
-		  
-	        // Inserting Contacts  
-	        Log.d("Insert: ", "Inserting ..");  
-	        if (db.updateContactCount() > 0) {
-	    	    Intent  intent = new Intent(Places_insert_MainActivity.this, Other_MainActivity.class);
-	   		     startActivity(intent); 
-	        } 
-          else 
-          {
-	           
+	  DatabaseHandler_Places db = new DatabaseHandler_Places(this);  
+			  
 	     
-	        db.addContact(new Database_Places ("Flavor Bar 1","0100000000", "4 Shikolany St, Shubra, Cairo Governorate" , "30.091485, " , "31.323500");
-          db.addContact(new Database_Places ("Flavor Bar 2 ","0200000000", "18 Al Somal, El-Montaza, Heliopolis, Cairo Governorate" , "30.074916" , "31.245592");
-          db.addContact(new Database_Places ("Flavor Bar 3","0300000000", "Tiba Outlet Mall, 11371, 75 El-Nasr Rd, Al Manteqah Al Oula, Nasr City, Cairo Governoratet" , "30.067643" , "31.330085");
-         Log.d("Reading: ", "Reading all contacts..");  
+	     
+	        db.addContact(new Database_Places ("Flavor Bar 1","0100000000", "4 Shikolany St, Shubra, Cairo Governorate" , "30.091485" , "31.323500"));
+	      db.addContact(new Database_Places ("Flavor Bar 2 ","0200000000", "18 Al Somal, El-Montaza, Heliopolis, Cairo Governorate" , "30.074916" , "31.245592"));
+	      db.addContact(new Database_Places ("Flavor Bar 3","0300000000", "Tiba Outlet Mall, 11371, 75 El-Nasr Rd, Al Manteqah Al Oula, Nasr City, Cairo Governoratet" , "30.067643" , "31.330085"));
+	     Log.d("Reading: ", "Reading all contacts..");  
 	        List<Database_Places> contacts = db.getAllContacts();  
 	  
 	        for (Database_Places cn : contacts) {  
 	            String log = "ID: " + cn.getID() +"getname:"+ cn.getname()
-              + " ,getLatitude: " + cn.getLatitude()+", getLatitude:" + cn.getLatitude()+
-              + " ,getphones: " + cn.getphones()+ "  ,
+	          + " ,getLatitude: " + cn.getLatitude()+", getLatitude:" + cn.getLatitude()
+	          + " ,getphones: " + cn.getphone() 
 	            + " ,getAddress: " + cn.getAddress();
 	        
 	            // Writing Contacts to log  
 	            Log.d("Name: ", log);  
-              
-          
+	          
+	      
+	       
 	        }
-	        }  
 	    
 	  
 	}
