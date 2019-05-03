@@ -62,7 +62,7 @@ public class DatabaseHandler_Places  extends SQLiteOpenHelper {
         return contact;  
    }  
 //  
-	// code to add the new contact  
+	// code to add the new contact  (ADD)
     void addContact(Database_Places contact) {  
         SQLiteDatabase db = this.getWritableDatabase();  
   
@@ -83,6 +83,24 @@ public class DatabaseHandler_Places  extends SQLiteOpenHelper {
         db.close(); // Closing database connection  
     }  
     
+     public boolean updateContact (Integer id, String name, String phone, String address, String longitude,String Latitude) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("phone", phone);
+        contentValues.put("address", address);
+        contentValues.put("longitude", longitude);
+        contentValues.put("Latitude", Latitude);
+        db.update(TABLE_Places, contentValues, "id = ? ", new String[] { Integer.toString(id) } );
+        return true;
+     }
+
+     public Integer deleteContact (Integer id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_Places,   "id = ? ", 
+        new String[] { Integer.toString(id) });
+     } 
+     
     // code to get all contacts in a list view  
     public List<Database_Places> getAllContacts() {  
         List<Database_Places> contactList = new ArrayList<Database_Places>();  
@@ -112,5 +130,16 @@ public class DatabaseHandler_Places  extends SQLiteOpenHelper {
         // return contact list  
         return contactList;  
     }  
-
+//numberOfRows
+    public int numberOfRows(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        int numRows = (int) DatabaseUtils.queryNumEntries(db, TABLE_Places);
+        return numRows;
+     }
+    //search by id
+    public Cursor getData(int id) {
+    SQLiteDatabase db = this.getReadableDatabase();
+    Cursor res =  db.rawQuery( "select * from "+TABLE_Places+" where id="+id+"", null );
+    return res;
+ }
         		
