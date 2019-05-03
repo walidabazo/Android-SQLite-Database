@@ -77,14 +77,15 @@
      }
   
   ## Following is the content of Database class DBHelper.java
-     import android.content.ContentValues;  
-     import android.content.Context;  
-     import android.database.Cursor;  
-     import android.database.sqlite.SQLiteDatabase;
-     import android.database.sqlite.SQLiteDatabase.CursorFactory;
-     import android.database.sqlite.SQLiteOpenHelper;  
-     import java.util.ArrayList;  
-     import java.util.List;  
+       import android.content.ContentValues;  
+       import android.content.Context;  
+       import android.database.Cursor;
+       import android.database.DatabaseUtils;
+       import android.database.sqlite.SQLiteDatabase;
+       import android.database.sqlite.SQLiteDatabase.CursorFactory;
+       import android.database.sqlite.SQLiteOpenHelper;  
+       import java.util.ArrayList;  
+       import java.util.List;  
 
     public class DatabaseHandler_Places  extends SQLiteOpenHelper {
    	private static final int DATABASE_VERSION = 1;  
@@ -92,7 +93,7 @@
     private static final String TABLE_Places = "Places";  
     private static final String KEY_ID =   "ID";  
     private static final String KEY_name =   "name "; 
-    private static final String KEY_name =   "phone ";
+    private static final String KEY_phone =   "phone ";
     private static final String KEY_Address =   "Address";  
     private static final String KEY_longitude =   "longitude";  
     private static final String KEY_Latitude =   "Latitude";  
@@ -109,7 +110,7 @@
         +KEY_phone + " NVARCHAR(255), " 
         	+KEY_Address + " NVARCHAR(255), " 
 						+KEY_longitude + " NVARCHAR(255), " 
-						+KEY_Latitude + " NVARCHAR(255),+ ")";
+						+KEY_Latitude + " NVARCHAR(255)"+ ")";
 		db.execSQL(CREATE_CONTACTS_TABLE);
 	}
   
@@ -148,7 +149,7 @@
 
   
         values.put(KEY_name,contact.getname() ); 
-        values.put(KEY_Phone,contact.getPlace()); 
+        values.put(KEY_phone,contact.getphone()); 
         
        
         values.put(KEY_Address,contact.getAddress()); 
@@ -219,8 +220,8 @@
     SQLiteDatabase db = this.getReadableDatabase();
     Cursor res =  db.rawQuery( "select * from "+TABLE_Places+" where id="+id+"", null );
     return res;
+     }
     }
-
 ## Following is the content of the modified Databas insert  places_insert_MainActivity.java.
 
     import android.app.Activity;
