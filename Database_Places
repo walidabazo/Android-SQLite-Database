@@ -26,7 +26,7 @@ public Database_Places(){
   {
   this._name =  name;
   this._phone = phone ;
-  this._Adress = Adress ;
+  this._Address = Address ;
 	this._longitude = longitude ;
 	this._Latitude =  Latitude;
   }
