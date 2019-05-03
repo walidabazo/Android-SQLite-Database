@@ -48,7 +48,7 @@ public class DatabaseHandler_Places  extends SQLiteOpenHelper {
         Cursor cursor = db.query(TABLE_Places, new String[] { KEY_ID,  
     KEY_name,
     KEY_phone,
-    KEY_Adress,
+    KEY_Address,
         		KEY_longitude,  }, KEY_ID + "=?",  
                new String[] { String.valueOf(id) }, null, null, null, null);  
  
@@ -73,7 +73,7 @@ public class DatabaseHandler_Places  extends SQLiteOpenHelper {
         values.put(KEY_Phone,contact.getPlace()); 
         
        
-        values.put(KEY_Address,contact.getAdress()); 
+        values.put(KEY_Address,contact.getAddress()); 
         values.put(KEY_longitude,contact.getlongitude()); 
         values.put(KEY_Latitude,contact.getLatitude()); 
       
@@ -99,7 +99,7 @@ public class DatabaseHandler_Places  extends SQLiteOpenHelper {
               
                 contact.setname(cursor.getString(0));
                 contact.setphone(cursor.getString(1));
-                  contact.setAdress(cursor.getString(2));
+                  contact.setAddress(cursor.getString(2));
                 contact.setlongitude(cursor.getString(3));
                 contact.setLatitude(cursor.getString(4));
          
