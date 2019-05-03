@@ -1,56 +1,63 @@
 # Android-SQLite-Database
 # sqlite in android using eclipse
 
+## Table 
+  | ID | Name | phone | Address | longitude | Latitude |
+  | --- | --- | --- | --- | --- |--- |
+  | 1 | Flavor Bar 1 | 0100000000 | 4 Shikolany St, Shubra, Cairo Governorate | 30.091485  | 31.323500 |
+  | 2 | Flavor Bar 2 | 0200000000 | 18 Al Somal, El-Montaza, Heliopolis, Cairo Governorate | 30.074916  | 31.245592 |
+  | 3 | Flavor Bar 3 | 0300000000 | Tiba Outlet Mall, 11371, 75 El-Nasr Rd | 30.067643  | 31.330085 |
+
 ## Following is the modified content of display Places activity 
 
     public class Database_Places 
-    {
-    int _ID;
-	  String  _name;
-	  String _phone;
+     {
+     int _ID;
+     String  _name;
+     String _phone;
     String  _Address;
     String  _longitude;
-	  String  _Latitude;
-    }
+     String  _Latitude;
+
+
   
-      
     public Database_Places(){
-		
-	   }
-  
+	
+     }
+
     public Database_Places( int ID,String name,String phone,String Address,String longitude, String Latitude)
-    {
-    this._name =  name;
-    this._phone= phone ;
-    this._Address = Address ;
-	  this._longitude = longitude ;
-	  this._Latitude =  Latitude;
+     {
+       this._name =  name;
+       this._phone= phone ;
+       this._Address = Address ;
+       this._longitude = longitude ;
+       this._Latitude =  Latitude;
     }
-  
+
     public Database_Places(String name,String phone,String Address,String longitude, String Latitude)
-  
+
      {
      this._name =  name;
      this._phone = phone ;
      this._Address = Address ;
-	   this._longitude = longitude ;
-	   this._Latitude =  Latitude;
+     this._longitude = longitude ;
+     this._Latitude =  Latitude;
      }
     //get
-  
-    public int getID(){
-    return this._ID;
+
+     public int getID(){
+     return this._ID;
      }
-  
+
      public String getname(){	
      return this._name;
- 
+
      }
      public String getphone(){	
      return this._phone;
- 
+
      }
-  
+
      public String getAddress(){	
      return this._Address;
      }
@@ -62,12 +69,12 @@
      }
      //set
      public void setID(int ID){	this._ID = ID ;  }
-     public void setname(String name ){	this._name = name;  }
-     public void setname(String phone ){	this._name = phone;  }
+     public void setname(String name){	this._name = name;  }
+     public void setphone(String phone){	this._name = phone;  }
      public void setAddress(String Address){	this._Address = Address ;  }
      public void setlongitude(String longitude){	this._longitude = longitude ;  }
      public void setLatitude(String Latitude){	this._Latitude = Latitude ;  }
-  
+     }
   
   ## Following is the content of Database class DBHelper.java
      import android.content.ContentValues;  
