@@ -68,38 +68,15 @@ public class DatabaseHandler_Places  extends SQLiteOpenHelper {
   
         ContentValues values = new ContentValues();  
 
-        values.put(KEY_Sorting, contact.getSorting()); 
+  
         values.put(KEY_name,contact.getname() ); 
-        values.put(KEY_Place,contact.getPlace()); 
-        values.put(KEY_Time_work,contact.getTime_work()); 
-        values.put(KEY_Description,contact.getDescription()); 
-        values.put(KEY_Established,contact.getEstablished()); 
-        values.put(KEY_Views,contact.getViews()); 
-        values.put(KEY_Supervisor,contact.getSupervisor()); 
-        values.put(KEY_price_tikets,contact.getprice_tikets()); 
-        values.put(KEY_Phones,contact.getPhones()); 
-        values.put(KEY_Contents,contact.getContents()); 
-        values.put(KEY_Manager,contact.getManager()); 
-        values.put(KEY_Website,contact.getWebsite()); 
-        values.put(KEY_Etymology,contact.getEtymology()); 
-        values.put(KEY_Maintenance_restoration,contact.getMaintenance_restoration()); 
-        values.put(KEY_description_owner,contact.getdescription_owner()); 
-        values.put(KEY_Video,contact.getVideo()); 
-        values.put(KEY_Facebook,contact.getFacebook()); 
-        values.put(KEY_Google_map_location,contact.getGoogle_map_location()); 
-        values.put(KEY_Type1,contact.getType1()); 
-        values.put(KEY_Goverments,contact.getGoverments()); 
-        values.put(KEY_Available_for_visit,contact.getAvailable_for_visit()); 
-        values.put(KEY_Type,contact.getType1()); 
-        values.put(KEY_Adress,contact.getAdress()); 
+        values.put(KEY_Phone,contact.getPlace()); 
+        
+       
+        values.put(KEY_Address,contact.getAdress()); 
         values.put(KEY_longitude,contact.getlongitude()); 
         values.put(KEY_Latitude,contact.getLatitude()); 
-        values.put(KEY_Notes,contact.getNotes()); 
-         
-        values.put(KEY_languages,contact.getlanguages()); 
-        values.put(KEY_typetomore,contact.gettypetomore()); 
-        values.put(KEY_Panorama,contact.getPanorama()); 
-        values.put(KEY_Sync,contact.getSync()); 
+      
         // Inserting Row  
         db.insert(TABLE_Places, null, values);  
         //2nd argument is String containing nullColumnHack  
@@ -110,7 +87,7 @@ public class DatabaseHandler_Places  extends SQLiteOpenHelper {
     public List<Database_Places> getAllContacts() {  
         List<Database_Places> contactList = new ArrayList<Database_Places>();  
         // Select All Query  
-        String selectQuery = "SELECT  Sorting,name,Place,Time_work,Description,Established,Views,Supervisor,price_tikets,Phones,Contents,Manager,Website,Etymology,Maintenance_restoration,description_owner,Video,Facebook,Google_map_location,Type1,Goverments,Available_for_visit,Type,Adress,longitude,Latitude,Notes,languages,typetomore,Panorama,Sync FROM " + TABLE_Places;  
+        String selectQuery = "SELECT  name,phone,Address,longitude,Latitude FROM " + TABLE_Places;  
   
         SQLiteDatabase db = this.getWritableDatabase();  
         Cursor cursor = db.rawQuery(selectQuery, null);  
@@ -120,38 +97,12 @@ public class DatabaseHandler_Places  extends SQLiteOpenHelper {
             do {  
             	Database_Places contact = new Database_Places();  
               
-                contact.setSorting(cursor.getString(0));
-                contact.setname(cursor.getString(1));
-                contact.setPlace(cursor.getString(2));
-                contact.setTime_work(cursor.getString(3));
-                contact.setDescription(cursor.getString(4));
-                contact.setEstablished(cursor.getString(5));
-                contact.setViews(cursor.getString(6));
-                contact.setSupervisor(cursor.getString(7));
-                contact.setprice_tikets(cursor.getString(8));
-                contact.setPhones(cursor.getString(9));
-                contact.setContents(cursor.getString(10));
-                contact.setManager(cursor.getString(11));
-                contact.setWebsite(cursor.getString(12));
-                contact.setEtymology(cursor.getString(13));
-                contact.setMaintenance_restoration(cursor.getString(14));
-                contact.setdescription_owner(cursor.getString(15));
-                contact.setVideo(cursor.getString(16));
-                contact.setFacebook(cursor.getString(17));
-                contact.setGoogle_map_location(cursor.getString(18));
-                contact.setType1(cursor.getString(19));
-                contact.setGoverments(cursor.getString(20));
-                contact.setAvailable_for_visit(cursor.getString(21));
-                contact.setType(cursor.getString(22));
-                contact.setAdress(cursor.getString(23));
-                contact.setlongitude(cursor.getString(24));
-                contact.setLatitude(cursor.getString(25));
-                contact.setNotes(cursor.getString(26));
-         //       contact.setID(Integer.parseInt(cursor.getString(27)));  
-                contact.setlanguages(cursor.getString(27));
-                contact.settypetomore(cursor.getString(28));
-                contact.setPanorama(cursor.getString(29));
-                contact.setSync(cursor.getString(30));
+                contact.setname(cursor.getString(0));
+                contact.setphone(cursor.getString(1));
+                  contact.setAdress(cursor.getString(2));
+                contact.setlongitude(cursor.getString(3));
+                contact.setLatitude(cursor.getString(4));
+         
                 
                 // Adding contact to list  
                 contactList.add(contact);  
@@ -162,4 +113,4 @@ public class DatabaseHandler_Places  extends SQLiteOpenHelper {
         return contactList;  
     }  
 
-        		KEY_Latitude,
+        		
