@@ -1,6 +1,12 @@
 # Android-SQLite-Database
 # sqlite in android using eclipse
 
+
+[![Watch the video](https://img.youtube.com/vi/FJPCXsJcImw/0.jpg)](https://youtu.be/FJPCXsJcImw)
+
+Subscriber youtube channel 
+https://www.youtube.com/channel/UCNJVG9_IebHe-NF-K_Y8Grw?sub_confirmation=1
+
 ## Table 
   | ID | Name | phone | Address | longitude | Latitude |
   | --- | --- | --- | --- | --- |--- |
